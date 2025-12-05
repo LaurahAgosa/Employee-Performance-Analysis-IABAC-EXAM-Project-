@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 streamlit
 pandas
 numpy
@@ -5,3 +6,11 @@ matplotlib
 
 
 
+=======
+streamlit
+pandas
+numpy
+matplotlib
+scikit-learn
+
+>>>>>>> 4f8f107 (Update requirements for streamlit deployment)
