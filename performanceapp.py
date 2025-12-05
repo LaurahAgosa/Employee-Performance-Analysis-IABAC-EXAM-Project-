@@ -7,18 +7,21 @@ import pandas as pd
 import pickle as pkl
 import numpy as np
 import matplotlib.pyplot as plt
+import os 
 
 #-------------------------------------------
 # loading the model and encoders
 #-------------------------------------------
 @st.cache_resource
 def load_model():
-    model = pkl.load(open("m_random_classifier.pkl", "rb"))
+    MODEL_PATH = os.path.join(os.path.dirname(__file__), "m_random_classifier.pkl")
+    model = pkl.load(open(MODEL_PATH, "rb"))
     return model
-
 def load_encoders():
-    Over_encoder = pkl.load(open("Over_encoder.pkl", "rb"))
-    Att_encoder = pkl.load(open("Att_encoder.pkl", "rb"))
+    OVER_ENCODER_PATH = os.path.join(os.path.dirname(__file__), "Over_encoder.pkl")
+    ATT_ENCODER_PATH = os.path.join(os.path.dirname(__file__), "Att_encoder.pkl")
+    Over_encoder = pkl.load(open(OVER_ENCODER_PATH, "rb"))
+    Att_encoder = pkl.load(open(ATT_ENCODER_PATH, "rb"))
     return Over_encoder, Att_encoder
 
 # calling the functions
